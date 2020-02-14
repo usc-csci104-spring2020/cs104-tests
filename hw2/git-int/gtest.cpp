@@ -255,7 +255,7 @@ TEST_F(GitTestSuite, fullTests){
     EXPECT_FALSE(g.process_command("display"));
     string t3 = testing::internal::GetCapturedStdout();
     EXPECT_EQ(t3, "a.txt : 101\nb.txt : 205\n");
-    //EXPECT_THROW(g.process_command("checkout v2-release"),std::invalid_argument);
+    EXPECT_THROW(g.process_command("checkout v2-release"),std::invalid_argument);
     EXPECT_FALSE(g.process_command("checkout v1-release"));
     testing::internal::CaptureStdout();
     EXPECT_FALSE(g.process_command("display"));
